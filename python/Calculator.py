@@ -1,4 +1,6 @@
 from tkinter import *
+from math import *
+
 import tkinter.messagebox as tmsg
 
 root=Tk()
@@ -17,7 +19,7 @@ def click(event):
             value=int(scvalue.get())
         else:
             try:
-                value=eval(entry_widget.get())
+                value=eval(entry_widget.get(), {'^': pow})
             except Exception as e:
                 print(e)
                 value="Error"
